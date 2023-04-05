@@ -26,8 +26,11 @@ jobs:
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
-          rm -rf fast-api-breast-cancer-model
-          git clone git@github.com:madt2709/fast-api-breast-cancer-model.git
-          cd fast-api-breast-cancer-model
-          sudo docker-compose build
-          sudo docker-compose up -d
+          
+            #Now we have got the access of EC2 and we will start the deploy .
+            rm -rf fast-api-breast-cancer-model
+            git clone git@github.com:madt2709/fast-api-breast-cancer-model.git
+            cd fast-api-breast-cancer-model
+            sudo docker-compose build
+            sudo docker-compose up -d
+          '
