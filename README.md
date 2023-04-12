@@ -6,6 +6,7 @@ Aim of this project is to train a logistic regression model on the Winsconcin br
 - Replication (the number of processes running)
 - Memory
 - Previous steps before starting
+
 However, to keep this as basic as possible these will all be out of scope.
 
 This will use tools such as Fast API, Docker and nginx to achieve the goal.
@@ -86,7 +87,7 @@ sudo vi /etc/nginx/sites-enabled/fastapi-demo
 
 Feel free to use another editor than vi. 
 
-Paste the following into the file: 
+Paste the following into the file replacing the `<PUBLIC_IP>` with the public IP of your instance:
 
 ``` bash
 server {
@@ -97,8 +98,6 @@ server {
     }
 }
 ```
-
-Replacing the `<PUBLIC_IP>` with the public IP of your instance.
 
 Save the file and restart nginx:
 
